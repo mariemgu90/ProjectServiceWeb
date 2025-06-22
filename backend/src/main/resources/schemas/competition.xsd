@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://competition.com/schemas"
+           targetNamespace="http://competition.com/schemas"
+           elementFormDefault="qualified">
+
+    <!-- Competition Elements -->
+    <xs:element name="getCompetitionsRequest">
+        <xs:complexType/>
+    </xs:element>
+
+    <xs:element name="getCompetitionsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="competition" type="tns:competition" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createCompetitionRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createCompetitionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="competition" type="tns:competition"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Match Elements -->
+    <xs:element name="getMatchesRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="competitionId" type="xs:long" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getMatchesResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="match" type="tns:match" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Club Elements -->
+    <xs:element name="getClubsRequest">
+        <xs:complexType/>
+    </xs:element>
+
+    <xs:element name="getClubsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="club" type="tns:club" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Complex Types -->
+    <xs:complexType name="competition">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="createdAt" type="xs:dateTime"/>
+            <xs:element name="updatedAt" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="match">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="competitionId" type="xs:long"/>
+            <xs:element name="club1Id" type="xs:long"/>
+            <xs:element name="club2Id" type="xs:long"/>
+            <xs:element name="score1" type="xs:int" minOccurs="0"/>
+            <xs:element name="score2" type="xs:int" minOccurs="0"/>
+            <xs:element name="createdAt" type="xs:dateTime"/>
+            <xs:element name="updatedAt" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="club">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="address" type="xs:string" minOccurs="0"/>
+            <xs:element name="contactMail" type="xs:string" minOccurs="0"/>
+            <xs:element name="contactTel" type="xs:string" minOccurs="0"/>
+            <xs:element name="createdAt" type="xs:dateTime"/>
+            <xs:element name="updatedAt" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

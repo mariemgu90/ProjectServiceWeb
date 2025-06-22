@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="3.0" xmlns="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
+Voir https://eclipse-ee4j.github.io/jaxb-ri 
+Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+Généré le : 2025.06.22 à 02:20:51 AM CEST 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://competition.com/schemas">
+    <schemaBindings map="false">
+      <package name="com.competition.schemas"/>
+    </schemaBindings>
+    <bindings scd="tns:getCompetitionsRequest">
+      <class ref="com.competition.schemas.GetCompetitionsRequest"/>
+    </bindings>
+    <bindings scd="tns:getCompetitionsResponse">
+      <class ref="com.competition.schemas.GetCompetitionsResponse"/>
+    </bindings>
+    <bindings scd="~tns:competition">
+      <class ref="com.competition.schemas.Competition"/>
+    </bindings>
+    <bindings scd="tns:createCompetitionRequest">
+      <class ref="com.competition.schemas.CreateCompetitionRequest"/>
+    </bindings>
+    <bindings scd="tns:createCompetitionResponse">
+      <class ref="com.competition.schemas.CreateCompetitionResponse"/>
+    </bindings>
+    <bindings scd="tns:getMatchesRequest">
+      <class ref="com.competition.schemas.GetMatchesRequest"/>
+    </bindings>
+    <bindings scd="tns:getMatchesResponse">
+      <class ref="com.competition.schemas.GetMatchesResponse"/>
+    </bindings>
+    <bindings scd="~tns:match">
+      <class ref="com.competition.schemas.Match"/>
+    </bindings>
+    <bindings scd="tns:getClubsRequest">
+      <class ref="com.competition.schemas.GetClubsRequest"/>
+    </bindings>
+    <bindings scd="tns:getClubsResponse">
+      <class ref="com.competition.schemas.GetClubsResponse"/>
+    </bindings>
+    <bindings scd="~tns:club">
+      <class ref="com.competition.schemas.Club"/>
+    </bindings>
+  </bindings>
+</bindings>
+
